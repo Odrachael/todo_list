@@ -3,10 +3,10 @@ body {
     background-image: linear-gradient(to right, pink, skyblue)
   }
   
-  h1 {
-    color: rgb(6, 6, 6);
+  .landing-page-container h1 {
+    color: rgb(223, 13, 157);
     text-align: center;
-    padding-right: 100px;
+    padding-right: 20px;
   }
   
   #app {
@@ -61,11 +61,9 @@ body {
     color: #e70d0d;
 
   }
-  .btn{
-    margin-left: ;
-  }
+
   footer p{
-    margin-top: 100px;
+    margin-top: 200px;
   }
   main p1{
     color: yellow;
@@ -73,12 +71,12 @@ body {
     padding: 5px;
   }
   main p{
-    color: blue;
+    color: orange;
     background-color: grey; border-radius:10px ;
     padding: 5px;
   }
   .landing-page-container {
-    background-image: url('https://media.istockphoto.com/id/863607936/photo/to-do-list-on-note-pad-with-coffee-and-pen-on-office-desk.jpg?s=1024x1024&w=is&k=20&c=1sjUUg92Doc8WRmV4mT4D-7H4W27Tb_t1MvqEAd0lv4=');
+    background-image: url('https://i.pinimg.com/564x/8c/c4/ec/8cc4eca4539f89a00731f7fb3d4c96c9.jpg');
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */

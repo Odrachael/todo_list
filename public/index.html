@@ -16,6 +16,7 @@
       <option value="it">Italian</option>
       <!-- Add more language options as needed -->
     </select>
+
     <header>
         <!-- Navigation bar or header content -->
         <h1>Todo List</h1>
@@ -43,38 +44,6 @@
     </footer>
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
-    <script>
-        // Your JavaScript code goes here
-        document.getElementById('language-select').addEventListener('change', function() {
-            var language = this.value;
-            var placeholderText = getPlaceholderText(language);
-            document.getElementById('task-input').placeholder = placeholderText;
-        });
-
-        function getPlaceholderText(language) {
-            switch (language) {
-                case 'en':
-                    return 'Enter a new task...';
-                case 'fr':
-                    return 'Entrez une nouvelle tâche...';
-                case 'es':
-                    return 'Ingrese una nueva tarea...';
-                case 'de':
-                    return 'Geben Sie eine neue Aufgabe ein...';
-                case 'it':
-                    return 'Inserisci un nuovo compito...';
-                // Add more cases for additional languages
-                default:
-                    return 'Enter a new task...';
-            }
-        }
-    </script>
-
-    <script>
-        // Function to navigate back to the landing page
-        function goToHomePage() {
-            window.location.href = "landing.html";
-        }
-    </script>
 </body>
 </html>
+
