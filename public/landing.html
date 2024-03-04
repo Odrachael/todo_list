@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+    <a href="landing.html">
+        <div class="landing-page-container">
     <header>
         <!-- Header content -->
         <h1>Welcome to Todo List</h1>
@@ -14,41 +16,26 @@
 
     <main>
         <!-- Main content -->
-        <strong><p1>This is Your Personalized Todo List</p1></strong>
-        <i><strong><p>Get organized and boost your productivity with our simple todo list app.<br>Easily manage your tasks and stay on top of your commitments.<br>Click "Get Started" below to begin your journey to a more organized life<br>or Click "View Saved Task" to access saved tasks!</p></i></strong>
+       <strong><p1>This is Your Personalized Todo List</p1></strong>
+        <i><strong><p>Get organized and boost your productivity with our simple todo list app.<br>Easily manage your tasks and stay on top of your commitments.<br>Click "Get Started" below to begin your journey to a more organized life<br>and also have access to your saved tasks!</p></i></strong>
         <a href="index.html" class="btn">Get Started</a>
-        <a href="index.html" class="saved">View Saved Tasks</a> 
-
-        <!-- Login form -->
-        <form id="login-form">
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button type="button" onclick="login()">Login</button>
-        </form>
     </main>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text horizontally */
+        }
+
+        .btn {
+            margin-bottom: 40px; /* Add some space between buttons */
+        }
+    </style>
 
     <footer>
         <!-- Footer content -->
         <p>&copy; 2024 Todo List. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript code -->
-    <script>
-        function login() {
-            // You can add your authentication logic here
-            // For simplicity, let's assume any non-empty username/password is valid
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            if (username && password) {
-                // Successful login
-                alert('Welcome, ' + username + '!');
-                // You can add further actions after successful login, such as redirecting to another page
-            } else {
-                // Invalid login
-                alert('Invalid username or password');
-            }
-        }
-    </script>
 </body>
 </html>
