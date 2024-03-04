@@ -41,12 +41,9 @@ body {
     margin: 5px; 
     margin-left:-39px ;
   }
-  
   .task-item-text {
     margin-right: 10px;
-
   }
-
   .task-delete-button {
     background-color: #e70d0d;
     color: rgb(146, 28, 28);
@@ -55,7 +52,6 @@ body {
     border-radius: 50%;
     cursor: pointer;
   }
-
   main .btn{
     margin-left: -400px;
     margin-top: 50px ;
@@ -77,7 +73,6 @@ body {
     margin-left: -310px;
     background-color:
   }
-  @media only screen and (min-width: 768px) {
     .landing-page-container {
         background-image: url('image.jpg/todo\ list\ png\ \(1\).jpg');
         background-size: cover;
@@ -89,36 +84,3 @@ body {
         justify-content: center;
         align-items: center;
     }
-  }
-/* General styles */
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
-.landing-page-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-main {
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Responsive styles */
-@media only screen and (max-width: 600px) {
-  .landing-page-container {
-      padding: 10px;
-  }
-}
