@@ -4,8 +4,8 @@ body {
   }
   
   .landing-page-container h1 {
-    color: blue;
-    margin-left: -480px;
+    color: #187932;
+    margin-left: -380px;
   } 
   
   #app {
@@ -53,13 +53,13 @@ body {
     position: absolute;
     right: -40px;
     border-radius: 50%;
-    padding-left: 
     cursor: pointer;
   }
 
   main .btn{
-    margin-left: -700px;
+    margin-left: -400px;
     margin-top: 50px ;
+    color:#187932;
   }
   footer p{
     margin-top: 200px;
@@ -68,22 +68,25 @@ body {
     color: black;
    border-radius:10px ;
     padding: 5px;
-  margin-left:-650px;
+  margin-left:-500px;
   }
   main p{
     color: black;
     border-radius:10px ;
-    padding: 5px;
-    margin-left: -500px;
+    padding: px;
+    margin-left: -310px;
+    background-color:
   }
-  .landing-page-container {
-    background-image: url('image.jpg/todo\ list\ png\ \(1\).jpg');
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    height: 100vh; /* Set the height of the container to 100% of the viewport height */
-    display: flex; /* Use flexbox for centering content vertically */
-    flex-direction: column; /* Stack the content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-}
+  @media only screen and (min-width: 768px) {
+    .landing-page-container {
+        background-image: url('image.jpg/todo\ list\ png\ \(1\).jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }
