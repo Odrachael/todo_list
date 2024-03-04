@@ -23,6 +23,7 @@
         <nav>
             <ul>
                 <li><a href="landing.html">Home</a></li> <!-- Link to landing page -->
+                <li><button onclick="logout()">Logout</button></li> <!-- Logout button -->
             </ul>
         </nav>
     </header>
@@ -44,6 +45,14 @@
     </footer>
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+    <script>
+        function logout() {
+            // Add your logout logic here
+            // For example, you can clear session data, redirect to login page, etc.
+            // For demonstration purposes, let's just reload the page
+            location.reload();
+        }
+    </script>
 </body>
 </html>
-

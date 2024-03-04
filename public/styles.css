@@ -4,10 +4,9 @@ body {
   }
   
   .landing-page-container h1 {
-    color: rgb(223, 13, 157);
-    text-align: center;
-    padding-right: 20px;
-  }
+    color: blue;
+    margin-left: -480px;
+  } 
   
   #app {
     max-width:400px;
@@ -57,26 +56,31 @@ body {
     padding-left: 
     cursor: pointer;
   }
-  .hero h2{
-    color: #e70d0d;
 
+  main .btn{
+    margin-left: -700px;
+    margin-top: ;
   }
-
+main .saved{
+  margin-left: -700px;
+}
   footer p{
     margin-top: 200px;
   }
   main p1{
-    color: yellow;
-    background-color: grey; border-radius:10px ;
+    color: black;
+   border-radius:10px ;
     padding: 5px;
+  margin-left:-650px;
   }
   main p{
-    color: orange;
-    background-color: grey; border-radius:10px ;
+    color: black;
+    border-radius:10px ;
     padding: 5px;
+    margin-left: -500px;
   }
   .landing-page-container {
-    background-image: url('https://i.pinimg.com/564x/8c/c4/ec/8cc4eca4539f89a00731f7fb3d4c96c9.jpg');
+    background-image: url('image.jpg/todo\ list\ png\ \(1\).jpg');
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
