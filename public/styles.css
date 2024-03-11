@@ -8,19 +8,39 @@ body {
     font-family: Arial, sans-serif;
     background-color:#B5FFE9;
   }
+
+   /* Style for the SVG menu dropdown*/
+   svg {
+     position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:px;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin: 20px; /* Adjust margin as needed */
+    fill: black; /* Adjust fill color as needed */
+       }
+
   
   .landing-page-container h1 {
-    color: #d9eddf;
+    color: black;
     margin: 0;
+    text-align: left center;
   } 
+  .landing-page-container h2{
+    color: black;
+    margin: 0;
+    font-size:55px;
+  }
   .landing-page-container body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
   }
   .landing-page-container header{
-    background-color:#444545 ;
     padding:10px;
+    margin-left: 80px;
+    margin-top: 10px;
   }
   .landing-page-container main{
     display: flex;
@@ -29,6 +49,7 @@ body {
     text-align: center; /* Center text horizontally */
     flex-wrap: wrap;
     margin-top: 50px;
+    font-size: 20px;
   }
   .btn {
     display: inline-block;
@@ -39,25 +60,12 @@ body {
     border-radius: 5px;
     margin-top: 20px;
   }
-  .landing-page-container footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    margin-top: 50px;
-  }
   #app {
     max-width:400px;
     margin: 0 auto;
     min-width: 320px;
     max-width:1024px ;
   }
-  /* Responsive Image Styles */
-.landing-page-image {
-  max-width: 100%; /* Ensure image doesn't exceed container width */
-  height: auto; /* Maintain aspect ratio */
-  margin-top: 50px; /* Adjust margin as needed */
-}
 
   input[type="text"] {
     width: calc(100% - 80px);
@@ -80,22 +88,39 @@ body {
     width: 250px; 
     height: 20px; 
     position: relative;
-    background-color:#444545;
+    background-color:grey;
     border: 1px solid black;
-    color: white;
+    color: black;
     border-radius:10px ;
     padding: 10px; 
     margin: 5px; 
     margin-left:-39px ;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show an ellipsis (...) when text overflows */
   }
   .task-item-text {
     margin-right: 10px;
   }
   .task-delete-button {
-    background-color: red;
+    background-color: #e70d0d;
+    color: rgb(146, 28, 28);
     position: absolute;
-    right: -40px;
+    right: 5px; /* Adjust the position to fit into the task item */
+    top: 5px; /* Adjust the position to fit into the task item */
     border-radius: 50%;
+    padding: 5px;
     cursor: pointer;
-  }
-
+}
+  .task-item:hover {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+}
+.task-item.clicked {
+  background-color: #333; /* Background color for clicked task item */
+  text-decoration: line-through; /* Strike out text for clicked task item */
+}
+/* Set all odd list items to a different color (zebra-stripes) */
+.task-item:nth-child(odd) {
+  background: #f9f9f9;
+}

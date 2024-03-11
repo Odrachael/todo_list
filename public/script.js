@@ -113,3 +113,12 @@ function getPlaceholderText(language) {
 function goToHomePage() {
   window.location.href = "landing.html";
 }
+
+// Add event listener to the task list
+document.getElementById('task-list').addEventListener('click', function(event) {
+  // Check if the clicked element is a task item
+  if (event.target.classList.contains('task-item')) {
+      // Toggle the clicked class on the clicked task item
+      event.target.classList.toggle('clicked');
+  }
+});
