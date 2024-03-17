@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color:#B5FFE9;
+    background-color:white;
   }
 
    /* Style for the SVG menu dropdown*/
@@ -18,12 +18,34 @@ body {
     width: 50px; /* Adjust size as needed */
     height: 50px; /* Adjust size as needed */
     margin: 20px; /* Adjust margin as needed */
-    fill: black; /* Adjust fill color as needed */
+    fill: #F96F5D; /* Adjust fill color as needed */
        }
+
+    header{
+    color:#F96F5D ;
+    }
+    
+    /* CSS for Dropdown Menu */
+.dropdown-toggle {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
 
   
   .landing-page-container h1 {
-    color: black;
+    color: #F96F5D;
     margin: 0;
     text-align: left center;
   } 
@@ -51,10 +73,11 @@ body {
     margin-top: 50px;
     font-size: 20px;
   }
+  
   .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #F96F5D;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -76,7 +99,7 @@ body {
   }
   
   button {
-    background-color: grey; border-radius:10px ;
+    background-color: #F96F5D; border-radius:10px ;
     padding: 5px;
     cursor: pointer;
     color: white;

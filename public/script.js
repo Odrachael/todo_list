@@ -122,3 +122,21 @@ document.getElementById('task-list').addEventListener('click', function(event) {
       event.target.classList.toggle('clicked');
   }
 });
+
+// Function to handle dropdown toggle
+document.querySelector('.dropdown-toggle').addEventListener('click', function() {
+  // Toggle the dropdown menu visibility
+  document.querySelector('.dropdown-menu').classList.toggle('show');
+});
+
+// Add event listener to the "How it works" link
+document.querySelector('.dropdown-item:nth-child(1)').addEventListener('click', function(event) {
+  event.preventDefault();
+  // Add your functionality for "How it works" here
+});
+
+// Add event listener to the "About Us" link
+document.querySelector('.dropdown-item:nth-child(2)').addEventListener('click', function(event) {
+  event.preventDefault();
+  // Add your functionality for "About Us" here
+});
