@@ -114,29 +114,22 @@ function goToHomePage() {
   window.location.href = "landing.html";
 }
 
-// Add event listener to the task list
-document.getElementById('task-list').addEventListener('click', function(event) {
-  // Check if the clicked element is a task item
-  if (event.target.classList.contains('task-item')) {
-      // Toggle the clicked class on the clicked task item
-      event.target.classList.toggle('clicked');
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
   }
-});
-
-// Function to handle dropdown toggle
-document.querySelector('.dropdown-toggle').addEventListener('click', function() {
-  // Toggle the dropdown menu visibility
-  document.querySelector('.dropdown-menu').classList.toggle('show');
-});
-
-// Add event listener to the "How it works" link
-document.querySelector('.dropdown-item:nth-child(1)').addEventListener('click', function(event) {
-  event.preventDefault();
-  // Add your functionality for "How it works" here
-});
-
-// Add event listener to the "About Us" link
-document.querySelector('.dropdown-item:nth-child(2)').addEventListener('click', function(event) {
-  event.preventDefault();
-  // Add your functionality for "About Us" here
-});
+}

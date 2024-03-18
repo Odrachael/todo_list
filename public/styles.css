@@ -11,13 +11,10 @@ body {
 
    /* Style for the SVG menu dropdown*/
    svg {
-     position: absolute;
-    top: 0;
-    left: 0;
-    margin-top:px;
+    position: relative;
     width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
-    margin: 20px; /* Adjust margin as needed */
+    height: 30px; /* Adjust size as needed */
+    margin: -10px; /* Adjust margin as needed */
     fill: #F96F5D; /* Adjust fill color as needed */
        }
 
@@ -26,23 +23,45 @@ body {
     }
     
     /* CSS for Dropdown Menu */
-.dropdown-toggle {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-}
-
-.show {
-  display: block;
-}
-
+    .dropbtn {
+      background-color: black;
+      color: white;
+      padding: 15px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+    
   
   .landing-page-container h1 {
     color: #F96F5D;
