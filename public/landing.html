@@ -5,24 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+ </style>
 </head>
-     <!-- SVG Dropdown Toggle -->
-     <body style="background-color:white;">
-        <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-                    <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
-                </svg></button>
-                
-          <div id="myDropdown" class="dropdown-content">
-            <a href="#login">Login</a>
-            <a href="#how it works">How it works</a>
-            <a href="#about us">About us</a>
-          </div>
-        </div>
+  </style>
+  </head>
+  <body>
+  
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About us</a>
+    <a href="#">How it works</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+  
+  <div id="main">
+    <span style="font-size:30px;cursor:pointer;color: #F96F5D;" onclick="openNav()">&#9776; TO-DO LIST</span>
+  </div>
+  
+    <script>
+  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+}
+
+        </script>
     <a href="landing.html"></a>
         <div class="landing-page-container">
             <header>
-                <h1>To-Do List</h1>
             </header>
             <main>
                 <!-- Main content --> 
@@ -33,7 +53,7 @@
         </div>
     <footer>
         <!-- Footer content -->
-        <p>&copy; 2024 Todo List. All rights reserved.</p>
+        <p>&copy; Coded by Odudu Rachael.</p>
     </footer>
 </body>
 </html>
