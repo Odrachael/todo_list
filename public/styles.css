@@ -128,31 +128,31 @@ body {
     color: white;
   }
  /* styles.css */
-.task-item {
-    display: flex;
-    align-items: flex-start;
-    width: 250px; 
-    height: 20px; 
-    position: relative;
-    background-color:grey;
-    border: 1px solid black;
-    color: black;
-    border-radius:10px ;
-    padding: 10px; 
-    margin: 5px; 
-    margin-left:-39px ;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Show an ellipsis (...) when text overflows */
-  }
+ .task-item {
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
+  align-items: flex-start; /* Align items to the start */
+  width: 250px; /* Set a fixed width or adjust as needed */
+  min-height: 20px; /* Set a minimum height or adjust as needed */
+  position: relative;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  color: #333;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
   .task-item-text {
-    margin-right: 10px;
+     flex: 1; /* Allow text to expand vertically */
+    width: 100%; /* Ensure text fills the available width */
+    word-wrap: break-word; /* Allow words to break if needed */
   }
   .task-delete-button {
-    background-color: #e70d0d;
+    background-color: white;
     color: rgb(146, 28, 28);
-    position: absolute;
-    right: 5px; /* Adjust the position to fit into the task item */
+    position:absolute;
+    right: -35px; /* Adjust the position to fit into the task item */
     top: 5px; /* Adjust the position to fit into the task item */
     border-radius: 50%;
     padding: 5px;
@@ -168,5 +168,5 @@ body {
 }
 /* Set all odd list items to a different color (zebra-stripes) */
 .task-item:nth-child(odd) {
-  background: #f9f9f9;
+  background: #5c4c4c;
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Add your CSS styles here */
+        /* This is just a basic styling, you can customize it further */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .signup-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .signup-container h2 {
+            text-align: center;
+        }
+        .signup-container input[type="text"],
+        .signup-container input[type="password"] {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .signup-container input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .signup-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <Body background="image.jpg/5660126.jpg">
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" onsubmit="createAccount(event)">
+            <input type="text" id="new-username" name="new-username" placeholder="Enter username" required>
+            <input type="password" id="new-password" name="new-password" placeholder="Enter password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+    <script>
+        function createAccount(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get input values
+            var newUsername = document.getElementById('new-username').value;
+            var newPassword = document.getElementById('new-password').value;
+
+            // Retrieve existing user data from localStorage or initialize an empty array
+            var userData = JSON.parse(localStorage.getItem('userData')) || [];
+
+            // Check if the username already exists
+            var existingUser = userData.find(user => user.username === newUsername);
+            if (existingUser) {
+                alert('Username already exists. Please choose a different username.');
+            } else {
+                // Add the new user to the user data array
+                userData.push({ username: newUsername, password: newPassword });
+
+                // Save the updated user data back to localStorage
+                localStorage.setItem('userData', JSON.stringify(userData));
+
+                // Optionally, you can redirect the user to another page after successful sign up
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

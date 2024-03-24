@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Add your CSS styles here */
+        /* This is just a basic styling, you can customize it further */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <Body background="image.jpg/5660126.jpg">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="validateLogin(event)">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get input values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+    
+            // Retrieve user data from localStorage
+            var userData = JSON.parse(localStorage.getItem('userData')) || [];
+    
+            // Check if username exists and password matches
+            var user = userData.find(user => user.username === username && user.password === password);
+            if (user) {
+                // Redirect user to index.html upon successful login
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+    
