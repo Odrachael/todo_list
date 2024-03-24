@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <!-- Add Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Add your CSS styles here */
         /* This is just a basic styling, you can customize it further */
@@ -17,18 +19,22 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Added for positioning the icon */
         }
         .signup-container h2 {
             text-align: center;
         }
         .signup-container input[type="text"],
         .signup-container input[type="password"] {
-            width: 100%;
+            width: calc(100% - 40px); /* Adjust width to accommodate icon */
             margin: 10px 0;
             padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+        .password-toggle-icon {
+            color: #777;
         }
         .signup-container input[type="submit"] {
             width: 100%;
@@ -45,12 +51,16 @@
     </style>
 </head>
 <body>
-    <Body background="image.jpg/5660126.jpg">
     <div class="signup-container">
         <h2>Sign Up</h2>
         <form id="signup-form" onsubmit="createAccount(event)">
             <input type="text" id="new-username" name="new-username" placeholder="Enter username" required>
             <input type="password" id="new-password" name="new-password" placeholder="Enter password" required>
+            <!-- Add Font Awesome icon for New Password -->
+            <i class="fas fa-eye-slash password-toggle-icon" onclick="togglePasswordVisibility('new-password')"></i>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+            <!-- Add Font Awesome icon for Confirm Password -->
+            <i class="fas fa-eye-slash password-toggle-icon" onclick="togglePasswordVisibility('confirm-password')"></i>
             <input type="submit" value="Sign Up">
         </form>
     </div>
@@ -62,6 +72,7 @@
             // Get input values
             var newUsername = document.getElementById('new-username').value;
             var newPassword = document.getElementById('new-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
 
             // Retrieve existing user data from localStorage or initialize an empty array
             var userData = JSON.parse(localStorage.getItem('userData')) || [];
@@ -76,9 +87,24 @@
 
                 // Save the updated user data back to localStorage
                 localStorage.setItem('userData', JSON.stringify(userData));
-
+                 alert('succesfully signed up');
                 // Optionally, you can redirect the user to another page after successful sign up
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
+            }
+        }
+
+        function togglePasswordVisibility(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            var icon = passwordInput.nextElementSibling;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
             }
         }
     </script>

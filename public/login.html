@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Add Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Add your CSS styles here */
         /* This is just a basic styling, you can customize it further */
@@ -17,6 +19,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Added for positioning the icon */
         }
         .login-container h2 {
             text-align: center;
@@ -25,14 +28,23 @@
         .login-container input[type="password"] {
             width: 100%;
             margin: 10px 0;
-            padding: 10px;
+            padding: 10px 35px 10px 10px; /* Adjust padding to accommodate icon */
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        .password-toggle-icon {
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            padding-top: 90px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
         .login-container input[type="submit"] {
             width: 100%;
-            background-color: #F96F5D;
+            background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -40,7 +52,7 @@
             cursor: pointer;
         }
         .login-container input[type="submit"]:hover {
-            background-color: #F96F5D;
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -51,29 +63,48 @@
         <form id="login-form" onsubmit="validateLogin(event)">
             <input type="text" id="username" name="username" placeholder="Username" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
+            <!-- Add Font Awesome icon -->
+            <i class="fas fa-eye-slash password-toggle-icon" onclick="togglePasswordVisibility()"></i>
             <input type="submit" value="Login">
         </form>
     </div>
 
     <script>
         function validateLogin(event) {
-            event.preventDefault(); // Prevent form submission
-            
-            // Get input values
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-    
-            // Retrieve user data from localStorage
-            var userData = JSON.parse(localStorage.getItem('userData')) || [];
-    
-            // Check if username exists and password matches
-            var user = userData.find(user => user.username === username && user.password === password);
-            if (user) {
-                // Redirect user to index.html upon successful login
-                window.location.href = 'index.html';
+        event.preventDefault(); // Prevent form submission
+        
+        // Get input values
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Retrieve user data from localStorage
+        var userData = JSON.parse(localStorage.getItem('userData')) || [];
+
+        // Check if username exists and password matches
+        var user = userData.find(user => user.username === username && user.password === password);
+        if (user) {
+            alert('login succesful');
+            // Redirect user to index.html upon successful login
+            window.location.href = 'index.html';
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    }
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var icon = document.querySelector('.password-toggle-icon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
             } else {
-                alert('Invalid username or password. Please try again.');
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
             }
         }
     </script>
-    
+</body>
+</html>
