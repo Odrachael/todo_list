@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <Body background="image.jpg/5660126.jpg">
@@ -23,17 +26,23 @@
         <h1>Todo List</h1>
         <nav>
             <ul>
-             <li><a style="text-decoration:none; color: red;" href="landing.html">logout</a></li> <!-- Link to landing page -->
+                <li><a style="text-decoration:none; color: red;" href="landing.html">logout</a></li> <!-- Link to landing page -->
             </ul>
         </nav>
     </header>
 
     <main>
-        <form id="task-form">
-            <input type="text" id="task-input" placeholder="Enter a new task...">
-            <button type="submit">Add Task</button>
-        </form>
-
+        <!-- Add a calendar input and priority selection dropdown -->
+<form id="task-form">
+    <input type="text" id="task-input" placeholder="Enter a new task...">
+    <input type="date" id="task-date" placeholder="Select a date...">
+    <select id="task-priority">
+        <option value="low">Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+    </select>
+    <button type="submit">Add Task</button>
+</form>
         <ul id="task-list">
             <!-- Task items will be dynamically added here -->
         </ul>
@@ -44,6 +53,10 @@
         <p>&copy; Coded by Odudu Rachael.</p>
     </footer>
 
+    <!-- Flatpickr JS -->
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+    </script>
 </body>
 </html>

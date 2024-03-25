@@ -158,15 +158,15 @@ body {
     padding: 5px;
     cursor: pointer;
 }
-  .task-item:hover {
+  /*.task-item:hover {
     background-color: #333; /* Dark background color */
-    color: #fff; /* White text color */
+   /* color: #fff;  White text color */
+/*
+/*.task-item.clicked {
+  background-color: #333; /* Background color for clicked task item 
+  text-decoration: line-through; Strike out text for clicked task item 
 }
-.task-item.clicked {
-  background-color: #333; /* Background color for clicked task item */
-  text-decoration: line-through; /* Strike out text for clicked task item */
-}
-/* Set all odd list items to a different color (zebra-stripes) */
+/* Set all odd list items to a different color (zebra-stripes) 
 .task-item:nth-child(odd) {
   background: #5c4c4c;
-}
+}*/
