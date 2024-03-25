@@ -147,26 +147,81 @@ body {
      flex: 1; /* Allow text to expand vertically */
     width: 100%; /* Ensure text fills the available width */
     word-wrap: break-word; /* Allow words to break if needed */
+    font-family: Serif;
+    font-size: large;
   }
   .task-delete-button {
     background-color: white;
     color: rgb(146, 28, 28);
     position:absolute;
-    right: -35px; /* Adjust the position to fit into the task item */
-    top: 5px; /* Adjust the position to fit into the task item */
+    right: -300px; /* Adjust the position to fit into the task item */
+    top: 1px; /* Adjust the position to fit into the task item */
     border-radius: 50%;
     padding: 5px;
     cursor: pointer;
 }
-  /*.task-item:hover {
-    background-color: #333; /* Dark background color */
-   /* color: #fff;  White text color */
-/*
-/*.task-item.clicked {
-  background-color: #333; /* Background color for clicked task item 
-  text-decoration: line-through; Strike out text for clicked task item 
+
+.task-item {
+  list-style: none;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
 }
-/* Set all odd list items to a different color (zebra-stripes) 
-.task-item:nth-child(odd) {
-  background: #5c4c4c;
+
+.task-item .priority-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.task-item .task-item-text {
+  vertical-align: middle;
+}
+
+.task-item .task-delete-button {
+  float: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+  .task-item:hover {
+    background-color: #333; /* Dark background color */
+    color: #fff;
+  }
+
+  .task-details {
+    position: absolute;
+    top: 0;
+    right:0;
+    margin-top: 10px; /* Adjust as needed */
+    margin-right: -200px; /* Adjust as needed */
+    font-size: 12px; /* Adjust as needed */
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .date-time-box {
+    background-color: #ef8b8b;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+/*.task-item.clicked {
+  background-color: #333;  Background color for clicked task item 
+  text-decoration: line-through; Strike out text for clicked task item 
 }*/
+
+ /*Set all odd list items to a different color (zebra-stripes) */
+
+/*.task-item:nth-child(odd) {
+  background: rgb(242, 178, 189);
+}
+.task-item:nth-child(even) {
+  background: rgb(181, 101, 101);
+}
