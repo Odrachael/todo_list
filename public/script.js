@@ -76,6 +76,15 @@ function formatTime(timeString) {
   return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
 }
 
+// Function to focus on the date and time inputs when the page loads
+window.addEventListener('DOMContentLoaded', function() {
+  const taskDate = document.getElementById('task-date');
+  const taskTime = document.getElementById('task-time');
+
+  taskDate.focus(); // Focus on the date input
+  taskTime.focus(); // Focus on the time input
+});
+
 // Function to get color based on priority
 function getPriorityColor(priority) {
   switch (priority) {
