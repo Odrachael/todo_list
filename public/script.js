@@ -76,14 +76,14 @@ function formatTime(timeString) {
   return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
 }
 
-// Function to set default date and time values when the page loads
+// Function to set the input types to date and time when the page loads
 window.addEventListener('DOMContentLoaded', function() {
-  const currentDate = new Date();
   const taskDate = document.getElementById('task-date');
   const taskTime = document.getElementById('task-time');
+
+  taskDate.type = 'date'; // Change input type to date
+  taskTime.type = 'time'; // Change input type to time
 });
-
-
 
 // Function to get color based on priority
 function getPriorityColor(priority) {

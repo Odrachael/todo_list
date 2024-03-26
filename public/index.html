@@ -35,8 +35,9 @@
         <!-- Add a calendar input and priority selection dropdown -->
         <form id="task-form">
             <input type="text" id="task-input" placeholder="Enter a new task...">
-            <input type="date" id="task-date" class="responsive-input"><!-- Input for date -->
-            <input type="time" id="task-time" class="responsive-input"><!-- Input for time -->
+            <input type="text" id="task-date" required> <!-- Input for date -->
+            <input type="text" id="task-time" required> <!-- Input for time -->
+
             <select id="task-priority">
                 <option value="low" style="background-color: green;">Low-priority</option>
                 <option value="medium" style="background-color: yellow;">Medium-priority</option>
