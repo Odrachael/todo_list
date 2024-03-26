@@ -81,14 +81,6 @@ window.addEventListener('DOMContentLoaded', function() {
   const currentDate = new Date();
   const taskDate = document.getElementById('task-date');
   const taskTime = document.getElementById('task-time');
-
-  // Set the default date to today
-  const formattedDate = currentDate.toISOString().split('T')[0];
-  taskDate.value = formattedDate;
-
-  // Set the default time to the current time
-  const formattedTime = currentDate.toTimeString().split(' ')[0];
-  taskTime.value = formattedTime;
 });
 
 
