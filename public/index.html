@@ -33,38 +33,32 @@
 
     <main>
         <!-- Add a calendar input and priority selection dropdown -->
-<form id="task-form">
-    <input type="text" id="task-input" placeholder="Enter a new task...">
-    <input type="date" id="task-date" required class="responsive-input"><!-- Input for time -->
-    <input type="time" id="task-time" required class="responsive-input"><!-- Input for time -->
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Enter a new task...">
+            <input type="date" id="task-date" class="responsive-input"><!-- Input for date -->
+            <input type="time" id="task-time" class="responsive-input"><!-- Input for time -->
+            <select id="task-priority">
+                <option value="low" style="background-color: green;">Low-priority</option>
+                <option value="medium" style="background-color: yellow;">Medium-priority</option>
+                <option value="high" style="background-color: red;">High-priority</option>
+            </select>
+            
+            <button type="submit">Add Task</button>
+        </form>
 
-    <select id="task-priority">
-        <option value="low" style="background-color: green;">Low-priority</option>
-        <option value="medium" style="background-color: yellow;">Medium-priority</option>
-        <option value="high" style="background-color: red;">High-priority</option>
-      </select>
-      
-    <button type="submit">Add Task</button>
+        <ul id="task-list">
+            <!-- Task items will be dynamically added here -->
+        </ul>
+    </main>
 
-</form>
-
-<main>
-    <div id="task-list"></div>
-      </div>
-
-    <ul id="task-list">
-        <!-- Task items will be dynamically added here -->
-    </ul>
-</main>
     <footer>
         <!-- Footer content -->
         <p>&copy; Coded by Odudu Rachael.</p>
     </footer>
 
     <!-- Flatpickr JS -->
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-    </script>
+    <!-- Your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

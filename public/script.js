@@ -85,6 +85,7 @@ window.addEventListener('DOMContentLoaded', function() {
   taskTime.focus(); // Focus on the time input
 });
 
+
 // Function to get color based on priority
 function getPriorityColor(priority) {
   switch (priority) {
