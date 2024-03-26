@@ -58,35 +58,12 @@ function addTask(event) {
     taskPriority.value = 'low';
 
     saveTaskToLocalStorage(taskText, taskDateValue, taskTimeValue, taskPriorityValue);
-
-    // Check if it's time for the task and ring alarm
-    checkTaskTimeAndRingAlarm({ text: taskText, date: taskDateValue, time: taskTimeValue });
   } else {
     alert('Please enter a task!');
   }
 }
 
-// Bind the addTask() function to the form submission event
-const taskForm = document.getElementById('task-form');
-taskForm.addEventListener('submit', addTask);
 
-// Function to check if it's time for a task and trigger an alarm
-function checkTaskTimeAndRingAlarm(task) {
-  const taskDateTime = new Date(task.date + 'T' + task.time);
-  const currentDateTime = new Date();
-
-  if (currentDateTime >= taskDateTime) {
-    // Time for the task, trigger alarm
-    ringAlarm();
-  }
-}
-
-
-
-// Remaining functions (formatDate, formatTime, getPriorityColor, saveTaskToLocalStorage, removeTaskFromLocalStorage, renderTasks) remain unchanged
-
-
-// Remaining functions (formatDate, formatTime, getPriorityColor, saveTaskToLocalStorage, removeTaskFromLocalStorage, renderTasks) remain unchanged
 // Function to format date
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -125,6 +102,7 @@ function removeTaskFromLocalStorage(index) {
   tasks.splice(index, 1); // Remove task at the specified index
   localStorage.setItem('tasks', JSON.stringify(tasks)); // Update tasks in local storage
 }
+
 // Function to render tasks from localStorage
 function renderTasks() {
   const taskList = document.getElementById('task-list');
@@ -172,10 +150,12 @@ function renderTasks() {
     li.appendChild(deleteButton);
     li.appendChild(taskDetails);
     taskList.appendChild(li);
-
-    // Check if it's time for the task and ring alarm
-    checkTaskTimeAndRingAlarm(task);
   });
 }
+
 // Initial rendering of tasks
 renderTasks();
+
+// Bind the addTask() function to the form submission event
+const taskForm = document.getElementById('task-form');
+taskForm.addEventListener('submit', addTask);
