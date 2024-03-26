@@ -76,15 +76,19 @@ function formatTime(timeString) {
   return time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
 }
 
-// Function to focus on the date and time inputs after a short delay when the page loads
+// Function to set default date and time values when the page loads
 window.addEventListener('DOMContentLoaded', function() {
-  setTimeout(function() {
-      const taskDate = document.getElementById('task-date');
-      const taskTime = document.getElementById('task-time');
+  const currentDate = new Date();
+  const taskDate = document.getElementById('task-date');
+  const taskTime = document.getElementById('task-time');
 
-      taskDate.focus(); // Focus on the date input
-      taskTime.focus(); // Focus on the time input
-  }, 500); // Delay in milliseconds
+  // Set the default date to today
+  const formattedDate = currentDate.toISOString().split('T')[0];
+  taskDate.value = formattedDate;
+
+  // Set the default time to the current time
+  const formattedTime = currentDate.toTimeString().split(' ')[0];
+  taskTime.value = formattedTime;
 });
 
 
