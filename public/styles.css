@@ -164,8 +164,9 @@ body {
 .task-item {
   list-style: none;
   padding: 10px;
-  margin: 5px 0;
+  margin: 5px 15px;
   border-radius: 5px;
+  top: 5px;
 }
 
 .task-item .priority-dot {
@@ -212,6 +213,7 @@ body {
     border-radius: 5px;
   }
 
+ 
 /*.task-item.clicked {
   background-color: #333;  Background color for clicked task item 
   text-decoration: line-through; Strike out text for clicked task item 
@@ -219,7 +221,7 @@ body {
 
  /*Set all odd list items to a different color (zebra-stripes) */
 
-/*.task-item:nth-child(odd) {
+.task-item:nth-child(odd) {
   background: rgb(242, 178, 189);
 }
 .task-item:nth-child(even) {
