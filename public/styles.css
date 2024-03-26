@@ -212,19 +212,6 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
   }
-  .calendar-input {
-    position: relative;
-}
-
-.calendar-input img {
-    position: absolute;
-    top: 50%;
-    right: 10px; /* Adjust the position as needed */
-    transform: translateY(-50%);
-    width: 20px; /* Adjust the size as needed */
-    height: auto;
-    cursor: pointer;
-}
 
  
 /*.task-item.clicked {
