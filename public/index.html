@@ -35,16 +35,19 @@
         <!-- Add a calendar input and priority selection dropdown -->
         <form id="task-form">
             <input type="text" id="task-input" placeholder="Enter a new task...">
-            <input type="text" id="task-date" placeholder="mm/dd/yyyy" required> <!-- Input for date -->
-            <input type="text" id="task-time"  placeholder="--:-- --" required> <!-- Input for time -->
+            <div class="calendar-input">
+                <input type="date" id="task-date" placeholder="mm/dd/yyyy" required>
+                <img src="calendar_icon.png" alt="Calendar Icon">
+            </div>
+            <input type="time" id="task-time" placeholder="--:-- --" required>
             <select id="task-priority">
                 <option value="low" style="background-color: green;">Low-priority</option>
                 <option value="medium" style="background-color: yellow;">Medium-priority</option>
                 <option value="high" style="background-color: red;">High-priority</option>
             </select>
-            
             <button type="submit">Add Task</button>
         </form>
+        
 
         <ul id="task-list">
             <!-- Task items will be dynamically added here -->
