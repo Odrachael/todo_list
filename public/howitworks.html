@@ -8,10 +8,32 @@
     <style>
         /* Add any additional CSS styles here */
         /* You can also keep your existing CSS styles */
+
+        /* Style for the grid container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* 9 columns */
+            grid-template-rows: (9, auto); /* Auto rows */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        /* Style for the grid item */
+        .grid-item {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        /* Style for the image in the grid item */
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            min-width: 200px; /* Adjust this value as needed */
+        }
     </style>
 </head>
 <body>
-    <Body background="image.jpg/5660126.jpg">
+    <Body background="image.jpg/background hiw.jpg">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="about.html">About us</a> <!-- Updated link -->
@@ -39,21 +61,53 @@
             document.body.style.backgroundColor = "white";
         }
     </script>
-        <header>
-            <!-- Your header content goes here -->
-            <h1>How It Works</h1>
-        </header>
-        <main>
-            <!-- Main content --> 
-            <h2>Overwhelmed<br> On top of it </h2> 
-            <h3>To-do list makes it frictionless to get all your tasks out of your head<br> and organized in one trusted place.</h3>
-        </main>
-        <h4>Capture task at the speed of thought </h4>
-        <h5>We’ve spent over a year refining how people add tasks to To-do list.<br> Our goal? To make a to-do list that feels like <br>a natural extension of your mind.</h5>
-
-        <sync>In perfect sync across all your devices</sync>
-
-
+    <header>
+        <!-- Your header content goes here -->
+        <h1 class="header">Welcome to How It Works</h1>
+    </header>
+    <main>
+        <!-- Main content --> 
+        <!-- Grid container -->
+        <div class="grid-container">
+            <!-- Grid items -->
+            <div class="grid-item">
+                <img src="image.jpg/slide1.png" alt="Photo 1">
+                <p>Write-up for Photo 1</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide2.png" alt="Photo 2">
+                <p>Write-up for Photo 2</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide3.png" alt="Photo 3">
+                <p>Write-up for Photo 3</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide4.png" alt="Photo 4">
+                <p>Write-up for Photo 4</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide5.png" alt="Photo 5">
+                <p>Write-up for Photo 5</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide6.png" alt="Photo 6">
+                <p>Write-up for Photo 6</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide7.png" alt="Photo 7">
+                <p>Write-up for Photo 7</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide8.png" alt="Photo 8">
+                <p>Write-up for Photo 8</p>
+            </div>
+            <div class="grid-item">
+                <img src="image.jpg/slide9.png" alt="Photo 9">
+                <p>Write-up for Photo 9</p>
+            </div>
+        </div>
+    </main>
     <footer>
         <!-- Footer content -->
         <p>&copy; Coded by Odudu Rachael.</p>

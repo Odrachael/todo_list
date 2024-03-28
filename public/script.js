@@ -173,3 +173,6 @@ renderTasks();
 // Bind the addTask() function to the form submission event
 const taskForm = document.getElementById('task-form');
 taskForm.addEventListener('submit', addTask);
+
+ //how it works script
+
