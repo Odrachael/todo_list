@@ -12,28 +12,83 @@
         /* Style for the grid container */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(1, 1fr); /* 9 columns */
-            grid-template-rows: (9, auto); /* Auto rows */
+            grid-template-columns: repeat(1, 1fr); /* 1 column */
+            grid-auto-rows: minmax(100px, auto); /* Auto rows */
             grid-gap: 20px;
             padding: 20px;
+            margin-right: 200px;
+            max-width: 600px;
+            position: relative;
+            margin-top: -100px;
         }
         /* Style for the grid item */
         .grid-item {
-            text-align: center;
-            border: 1px solid #ccc;
+            position: relative; /* Relative positioning */
             padding: 20px;
         }
-
+        
         /* Style for the image in the grid item */
-        .grid-item img {
-            max-width: 100%;
-            height: auto;
-            min-width: 200px; /* Adjust this value as needed */
+       /* Style for the image in the grid item */
+         .grid-item img {
+          max-width: 100%;
+          max-height: 100%; /* Added */
+          height: auto;
+          border-radius: 5px;
+         box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5); /* Long and obvious box shadow */
+         transition: border-color 0.3s ease; /* Smooth transition for border color change */
+         }
+
+        /* Style for the write-up */
+        /* Hover effect */
+        .grid-item img:hover {
+          border-color: rgb(10, 10, 10); /* Change border color on hover */
         }
+        /* Style for the scrollable write-up */
+.write-up-scrollable {
+    position: absolute;
+    margin-top: 290px;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    height: 400%; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    text-shadow: 0 0 10px rgba(241, 17, 17, 0.5); /* Visible shadow */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .write-up-scrollable {
+        width: 100%; /* Adjust width for mobile devices */
+        height: 350%; /* Adjust height for mobile devices */
+    }
+}
+/* Style for the image in the grid item */
+.grid-item img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+    border-radius: 10px; /* Add border radius for rounded corners */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+        margin-right: 0; /* Remove right margin */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+}
+      /* Style for header */
+        .header h1, .header h2 {
+            text-align: center;
+            color: #1d1c1c;
+            text-shadow: 0 0 10px rgba(249, 7, 7, 0.5); /* Visible shadow */
+        }
+
+
     </style>
 </head>
 <body>
-    <Body background="image.jpg/background hiw.jpg">
+    <body style="background-color: white;">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="about.html">About us</a> <!-- Updated link -->
@@ -47,7 +102,7 @@
     <div id="main">
         <span style="font-size:30px;cursor:pointer;color: #F96F5D;" onclick="openNav()">&#9776; TO-DO LIST</span>
     </div>
-  
+
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -61,9 +116,14 @@
             document.body.style.backgroundColor = "white";
         }
     </script>
+
     <header>
         <!-- Your header content goes here -->
-        <h1 class="header">Welcome to How It Works</h1>
+        <div class="header">
+            <h1><s>Overwhelmed</s> <br>On top of it</h1>
+            <h2>To-do list makes it frictionless to get all your tasks out of your head<br> and organized in one trusted place.</h2>
+            <h2>Organize, prioritize and get things done!</h2>
+        </div>
     </header>
     <main>
         <!-- Main content --> 
@@ -71,46 +131,76 @@
         <div class="grid-container">
             <!-- Grid items -->
             <div class="grid-item">
-                <img src="image.jpg/slide1.png" alt="Photo 1">
-                <p>Write-up for Photo 1</p>
-            </div>
+                <div class="write-up-scrollable">
+                    <h1>How To Use Our Beautiful To-Do list.</h1>
+                    <b><h2>Step 1: Accessing the App</h2></b>
+                       <b><i> Visit Our Website</i>: Open your preferred web browser and navigate to our website's URL.
+                        <i>Homepage</i>: Once on the homepage, you'll find an intuitive navigation menu. Click on <i>"How it works"</i> to understand the functionality of our to-do list app.
+                        <h2>Step 2: Understanding the Interface</h2>
+                        <i>Welcome</i>: Upon entering the <i>"How it works"</i> section, you'll be greeted with a warm welcome message and an overview of what our app offers.
+                        <i>Beautiful Grid</i>: Scroll down to discover a beautifully designed grid layout showcasing various features of the to-do list app.
+                        <h2>Step 3: Exploring Features</h2>
+                        <i>Grid Layout</i>: Each grid item represents a feature of our app, accompanied by a descriptive write-up and a captivating image. Click on any grid item to delve deeper into its functionality.
+                        Write-ups: Informative descriptions provide insights into how each feature enhances your productivity.
+                        <i>Images</i>: Stunning visuals complement the write-ups, making the exploration process engaging and visually appealing.
+                        <h2>Step 4: Interacting with the To-Do List</h2>
+                       <i> Navigation</i>: Once you've familiarized yourself with the app's features, use the navigation menu to return to the homepage or explore other sections.
+                        <i>To-Do List</i>: Navigate to the "To-Do List" section to start managing your tasks efficiently.
+                        <i>Add Tasks</i>: Click on the "add task" button to add new tasks. Enter task details such as title, description, priority, and due date.
+                       <i> Manage Tasks</i>: Easily edit or delete tasks by clicking on the respective icons next to each task.
+                       <i> Priority</i>: Assign priority levels to tasks to organize them based on urgency.
+                        <i>Date & Time</i>: Set due dates and times for tasks to stay on track and meet deadlines.
+                       <h2> Step 5: Sync Across Devices</h2>
+                        <i>Seamless Integration</i>: Our app seamlessly syncs across all your devices, ensuring you can access your to-do list anytime, anywhere.
+                        Mobile Accessibility: Enjoy the same user-friendly experience on both desktop and mobile devices, enhancing flexibility and convenience.
+                        <h2>Step 6: Stay Productive and Organized</h2>
+                        <i>Effortless Productivity</i>: With our to-do list app, managing tasks becomes effortless and enjoyable.
+                        Organized Workflow: Prioritize tasks, set deadlines, and track progress to maintain an organized workflow and boost productivity.
+                        Efficient Collaboration: Share tasks with team members or collaborate with friends and family to accomplish goals together.
+                        <h2>Step 7: Feedback and Support</h2>
+                        <i>Client Feedback</i>: We value your feedback! Visit the "Clients Feedback" section to read testimonials from our satisfied users.
+                       <i> Contact Us</i>: Have questions or need assistance? Visit the "Contact Us" section to reach out to our friendly support team.</h2></b>
+                </div>
+          </div>
             <div class="grid-item">
-                <img src="image.jpg/slide2.png" alt="Photo 2">
-                <p>Write-up for Photo 2</p>
-            </div>
+              <img src="image.jpg/slide1.png" alt="Photo 1">
+           </div>
+
             <div class="grid-item">
-                <img src="image.jpg/slide3.png" alt="Photo 3">
-                <p>Write-up for Photo 3</p>
+             <img src="image.jpg/slide2.png" alt="Photo 2">
+             
+            </div>
+
+            <div class="grid-item">
+            <img src="image.jpg/slide3.png" alt="Photo 3">
+
             </div>
             <div class="grid-item">
                 <img src="image.jpg/slide4.png" alt="Photo 4">
-                <p>Write-up for Photo 4</p>
+
             </div>
             <div class="grid-item">
                 <img src="image.jpg/slide5.png" alt="Photo 5">
-                <p>Write-up for Photo 5</p>
+
             </div>
             <div class="grid-item">
                 <img src="image.jpg/slide6.png" alt="Photo 6">
-                <p>Write-up for Photo 6</p>
+
             </div>
             <div class="grid-item">
                 <img src="image.jpg/slide7.png" alt="Photo 7">
-                <p>Write-up for Photo 7</p>
+
             </div>
             <div class="grid-item">
                 <img src="image.jpg/slide8.png" alt="Photo 8">
-                <p>Write-up for Photo 8</p>
+
             </div>
             <div class="grid-item">
                 <img src="image.jpg/slide9.png" alt="Photo 9">
-                <p>Write-up for Photo 9</p>
+
             </div>
         </div>
+        <div class="grid-pics">
     </main>
-    <footer>
-        <!-- Footer content -->
-        <p>&copy; Coded by Odudu Rachael.</p>
-    </footer>
 </body>
 </html>

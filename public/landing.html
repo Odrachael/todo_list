@@ -8,7 +8,107 @@
     <style>
         /* Add any additional CSS styles here */
         /* You can also keep your existing CSS styles */
+        .btn {
+            margin-bottom: 20px; /* Add margin below the button */
+        }
+        .date-time-container {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #F96F5D;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 300px;
+            margin: auto;
+        }
+        .calendar-container {
+            margin-top: 20px;
+            max-width: 300px;
+            margin: auto;
+            overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+        }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .calendar-table th, .calendar-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .calendar-table th {
+            background-color: #F96F5D;
+            color: white;
+        }
+        .calendar-table td {
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 600px) {
+            /* Adjust font size and padding for smaller screens */
+            .date-time-container {
+                font-size: 16px;
+                padding: 5px;
+                max-width: 100%; /* Adjust width for smaller screens */
+            }
+            .calendar-container {
+                font-size: 14px;
+                max-width: 100%; /* Adjust width for smaller screens */
+            }
+        }
     </style>
+    <script>
+        // Function to update date and time
+        function updateTime() {
+            var now = new Date();
+            var date = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            var time = now.toLocaleTimeString('en-US');
+            document.getElementById('date-time').innerHTML = date + ' - ' + time;
+        }
+        // Function to generate calendar
+        function generateCalendar() {
+            var now = new Date();
+            var daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+            var firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+            var calendarHTML = '<table class="calendar-table">';
+            calendarHTML += '<tr><th colspan="7">' + now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) + '</th></tr>';
+            calendarHTML += '<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>';
+            calendarHTML += '<tr>';
+            var dayCount = 1;
+            // Blank cells before the first day of the month
+            for (var i = 0; i < firstDayOfMonth; i++) {
+                calendarHTML += '<td></td>';
+            }
+            // Days of the month
+            for (var j = firstDayOfMonth; j < 7; j++) {
+                if (dayCount <= daysInMonth) {
+                    calendarHTML += '<td>' + dayCount + '</td>';
+                    dayCount++;
+                } else {
+                    calendarHTML += '<td></td>';
+                }
+            }
+            calendarHTML += '</tr>';
+            // Remaining days of the month
+            while (dayCount <= daysInMonth) {
+                calendarHTML += '<tr>';
+                for (var k = 0; k < 7 && dayCount <= daysInMonth; k++) {
+                    calendarHTML += '<td>' + dayCount + '</td>';
+                    dayCount++;
+                }
+                calendarHTML += '</tr>';
+            }
+            calendarHTML += '</table>';
+            document.getElementById('calendar').innerHTML = calendarHTML;
+        }
+        // Update date and time every second
+        setInterval(updateTime, 1000);
+        // Initial update
+        updateTime();
+        // Generate calendar
+        generateCalendar();
+    </script>
 </head>
 <body>
     <Body background="image.jpg/5660126.jpg">
@@ -50,9 +150,10 @@
         </main>
     </div>
 
-    <footer>
-        <!-- Footer content -->
-        <p>&copy; Coded by Odudu Rachael.</p>
-    </footer>
+    <!-- Date and time display -->
+    <div class="date-time-container" id="date-time"></div>
+
+    <!-- Calendar display -->
+    <div class="calendar-container" id="calendar"></div>
 </body>
 </html>
