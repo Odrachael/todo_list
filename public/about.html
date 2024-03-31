@@ -8,6 +8,66 @@
     <style>
         /* Add any additional CSS styles here */
         /* You can also keep your existing CSS styles */
+        .transparent-box {
+            background-color: #DB8072; /* Adjust the opacity as needed */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            width:auto;
+        }
+        .transparent-box h1 {
+            color: #DB8072;
+            opacity: 50%;
+        }
+
+        .main, h1 {
+            text-align: center;
+            color: rgb(67, 54, 54);
+        }
+        .main, h2 {
+            color: rgb(67, 54, 54);
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 20px; /* Add margin below the image slider */
+            animation: slideImages 4s infinite alternate; /* Slide animation */
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px; /* Adjust the maximum width of the images */
+            opacity: 0.8; /* Add opacity to the images */
+            transition: transform 0.5s ease; /* Add transition effect */
+        }
+        @keyframes slideImages {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .image-container {
+                display:block;
+                text-align: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .footer a img {
+            width: 50px; /* Adjust the size of the LinkedIn logo */
+            height: 50px;
+            margin: 0 10px; /* Add some spacing around the logo */
+            vertical-align: middle;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -23,7 +83,7 @@
     </div>
   
     <div id="main">
-        <span style="font-size:30px;cursor:pointer;color: #F96F5D;" onclick="openNav()">&#9776; TO-DO LIST</span>
+        <span style="font-size:30px;cursor:pointer;color: black;" onclick="openNav()">&#9776; TO-DO LIST</span>
     </div>
   
     <script>
@@ -39,13 +99,46 @@
             document.body.style.backgroundColor = "white";
         }
     </script>
-        <header>
-            <!-- Your header content goes here -->
-            <h1>About Us</h1>
-        </header>
-        <main>
-            <!-- Main content --> 
-            <h2>Creating global impact by<br> simplifying life’s complexities</h2> 
-        </main>
+    <header>
+        <!-- Your header content goes here -->
+        <h1 style="font-size: 500%;"><s>About Us</s></h1>
+    </header>
+    <main>
+        <!-- Main content -->
+            <h1 style="color: rgb(67, 54, 54);"> Welcome to our todo list app! We are a team of dedicated developers passionate<br> about productivity and organization. Our goal is to provide you with a simple yet powerful tool to help you manage your tasks <br>and stay on top of your commitments.</h1>
+        
+        <div class="transparent-box">
+            <h1 style="color: black;"> Mission</h1>
+              </div>
+              <h2>At our core, we believe that being organized leads to increased productivity and reduced stress. We understand the challenges of juggling multiple tasks and deadlines, which is why we've created this app to streamline your workflow and enhance your efficiency.</h2>
+     
+        <div class="transparent-box">
+            <h1 style="color: black;"> What Sets Us Apart</h1>
+            </div>
+            <h2>*User-Friendly Interface: Our app is designed with simplicity and ease of use in mind. Whether you're a seasoned productivity guru or just starting your journey to better organization, you'll find our app intuitive and user-friendly.</h2>
+            <h2>*Powerful Features: Despite its simplicity, our todo list app packs a punch with powerful features such as task prioritization, due date tracking, and task categorization. You can customize your tasks to suit your unique workflow and preferences.</h2>
+            <h2>*Cross-Platform Compatibility: Access your tasks anytime, anywhere, and on any device. Our app is fully responsive and works seamlessly across desktops, tablets, and smartphones, so you can stay organized on the go.</h2>
+       
+        <div class="image-container">
+            <img src="image.jpg/priority 2.png" alt="Priority 2"> <!-- Update the file path -->
+            <img src="image.jpg/priority 3.jpeg" alt="Priority 3"> <!-- Update the file path -->
+            <img src="image.jpg/priority pic.png" alt="Priority Pic"> <!-- Update the file path -->
+        </div>
+        <div class="transparent-box">
+            <h1 style="color: black;">Our Commitment</h1>
+        </div>
+        <h2>We are committed to continually improving our app to meet the evolving needs of our users. Your feedback is invaluable to us, and we welcome any suggestions or feature requests you may have. Our team is dedicated to providing you with the best possible todo list experience.</h2>
+            <h2>Thank you for choosing our todo list app to help you organize your work and life. We're excited to be a part of your productivity journey!</h2>
+    </main>
+    <div class="footer">
+        <a href="https://www.linkedin.com/in/rachael-o-692a5b278?trk=contact-info" target="_blank"><img src="image.jpg/linkdin pic.webp" alt="LinkedIn"></a>
+        <a href="https://github.com/Odrachael" target="_blank"><img src="image.jpg/gitgit.png" alt="GitHub" style="height: 50px;"></a>
+        <a href="https://twitter.com/Rachmoore07" target="_blank"><img src="image.jpg/twit.png" alt="twitter" style="height: 50px"></a>
+    </div>
 </body>
 </html>
+
+
+
+
+
