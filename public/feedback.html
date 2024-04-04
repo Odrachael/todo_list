@@ -8,6 +8,8 @@
     <style>
         /* Add any additional CSS styles here */
         /* You can also keep your existing CSS styles */
+         /* Add any additional CSS styles here */
+        /* You can also keep your existing CSS styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
@@ -17,16 +19,21 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #F96F5D;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 30px black; /* Visible shadow */
         }
         
         .form-group {
             margin-bottom: 20px;
         }
         
+        main, h2 , h1{
+            text-align: center;
+            text-shadow:0 0 30px #F96F5D;
+        }
+    
         label {
             font-weight: bold;
         }
@@ -46,7 +53,7 @@
         }
         
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: grey;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -55,13 +62,24 @@
         }
         
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: brown;
         }
         
         @media screen and (max-width: 768px) {
             .container {
                 width: 90%;
             }
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .footer a img {
+            width: 50px; /* Adjust the size of the LinkedIn logo */
+            height: 50px;
+            margin: 0 10px; /* Add some spacing around the logo */
+            vertical-align: middle;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -78,7 +96,7 @@
     </div>
   
     <div id="main">
-        <span style="font-size:30px;cursor:pointer;color: #F96F5D;" onclick="openNav()">&#9776; TO-DO LIST</span>
+        <span style="font-size:30px;cursor:pointer;color: #060505;" onclick="openNav()">&#9776; TO-DO LIST</span>
     </div>
   
     <script>
@@ -93,17 +111,48 @@
             document.getElementById("main").style.marginLeft = "0";
             document.body.style.backgroundColor = "white";
         }
+
+        // Function to handle form submission
+function submitFeedback(event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+
+    // Get form values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('feedback').value;
+
+    // Construct email body
+    var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+
+    // Send email using a mailto link
+    var mailtoLink = "mailto:Odudurachael1@gmail.com" +
+                     "?subject=Client Feedback" +
+                     "&body=" + encodeURIComponent(body);
+
+    // Open mail client with pre-filled email
+    window.location.href = mailtoLink;
+
+    // Show success message and refresh the page
+    alert('Feedback submitted successfully. Thank you!');
+    location.reload();
+}
+
+        
     </script>
+
     <header>
         <!-- Your header content goes here -->
-        <h1>Clients Feedback</h1>
+        <h1><u>We Value Your Feedback</u></h1>
     </header>
     <main>
         <!-- Main content --> 
-        <h2>Creating global impact by<br> simplifying life’s complexities</h2> 
+        <h2>At To-do list, we are committed to delivering the best possible experience to our clients. <br>Your feedback plays a crucial role in helping us understand your needs and improve our<br> services.
+            We appreciate the time you take to share your thoughts with us. Whether it's <br>a suggestion for improvement, a compliment on a job well done, or a concern you'd<br> like to address, we welcome it all.
+            Your feedback enables us to continuously enhance our<br> offerings and ensure that we meet and exceed your expectations. Together, we can<br> create a better experience for everyone.
+            Thank you for choosing To-do<br> list. We look forward to hearing from you!</h2> 
         <div class="container">
             <h2>Client Feedback Form</h2>
-            <form action="process_feedback.php" method="post">
+            <form id="feedback-form" onsubmit="submitFeedback(event)">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -122,5 +171,10 @@
             </form>
         </div>
     </main>
+    <div class="footer">
+        <a href="https://www.linkedin.com/in/rachael-o-692a5b278?trk=contact-info" target="_blank"><img src="image.jpg/linkdin pic.webp" alt="LinkedIn"></a>
+        <a href="https://github.com/Odrachael" target="_blank"><img src="image.jpg/gitgit.png" alt="GitHub" style="height: 50px;"></a>
+        <a href="https://twitter.com/Rachmoore07" target="_blank"><img src="image.jpg/twit.png" alt="twitter" style="height: 50px"></a>
+    </div>
 </body>
 </html>
