@@ -54,6 +54,31 @@
     overflow-y: auto; /* Enable vertical scrolling */
     text-shadow: 0 0 10px rgba(241, 17, 17, 0.5); /* Visible shadow */
 }
+      /*style for demo-video */
+.demo-video{
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Automatically adjust height */
+    margin-top: 1100px; /* Add some space */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    left: 150%;
+    transform: translate(-50%, -50%);
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .demo-video {    
+        margin-top: 500px; /* Adjust margin-top for mobile devices */
+        left: 100%; /* Reset left property */
+        transform: none; /* Reset transform property */
+    }
+}
+  
+.demo-video h1 {
+    text-align:start;
+    text-shadow: 0 0 10px rgba(241, 17, 17, 0.5); /* Visible shadow */
+}
+
 
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
@@ -75,6 +100,14 @@
         grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
         margin-right: 0; /* Remove right margin */
         padding: 10px; /* Adjust padding for mobile */
+    }
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .demo-video {
+        width: 100%; /* Adjust width for mobile devices */
+        height: 350%; /* Adjust height for mobile devices */
     }
 }
       /* Style for header */
@@ -171,6 +204,15 @@
                         <i>Client Feedback</i>: We value your feedback! Visit the "Clients Feedback" section to read testimonials from our satisfied users.
                        <i> Contact Us</i>: Have questions or need assistance? Visit the "Contact Us" section to reach out to our friendly support team.</h2></b>
                 </div>
+                  <!-- Video grid item -->
+        <div class="demo-video">
+            <!-- Video element -->
+            <h1><s>A Quick Demo Of How <br>Our App Works</s></h1>
+            <video controls>
+                <source src="image.jpg/demo video.mp4" type="video/mp4">
+            </video>
+        </div>
+        
           </div>
             <div class="grid-item">
               <img src="image.jpg/slide1.png" alt="Photo 1">
@@ -182,21 +224,10 @@
             </div>
 
             <div class="grid-item">
-            <img src="image.jpg/slide3.png" alt="Photo 3">
-
-            </div>
-            <div class="grid-item">
-                <img src="image.jpg/slide4.png" alt="Photo 4">
-
-            </div>
-            <div class="grid-item">
                 <img src="image.jpg/slide5.png" alt="Photo 5">
 
             </div>
-            <div class="grid-item">
-                <img src="image.jpg/slide6.png" alt="Photo 6">
 
-            </div>
             <div class="grid-item">
                 <img src="image.jpg/slide7.png" alt="Photo 7">
 
@@ -205,17 +236,8 @@
                 <img src="image.jpg/slide8.png" alt="Photo 8">
 
             </div>
-            <div class="grid-item">
-                <img src="image.jpg/slide9.png" alt="Photo 9">
-
-            </div>
         </div>
         <div class="grid-pics">
     </main>
-    <div class="footer">
-        <a href="https://www.linkedin.com/in/rachael-o-692a5b278?trk=contact-info" target="_blank"><img src="image.jpg/linkdin pic.webp" alt="LinkedIn"></a>
-        <a href="https://github.com/Odrachael" target="_blank"><img src="image.jpg/gitgit.png" alt="GitHub" style="height: 50px;"></a>
-        <a href="https://twitter.com/Rachmoore07" target="_blank"><img src="image.jpg/twit.png" alt="twitter" style="height: 50px"></a>
-    </div>
 </body>
 </html>

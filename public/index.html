@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Your CSS file -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS styles */
+        /* Style for time and date inputs */
+        #task-date,
+        #task-time {
+            width: 50%; /* Adjust width as needed */
+            margin-right: 5px; /* Add some spacing between inputs */
+        }
+    </style>
 </head>
 <body>
     <Body background="image.jpg/5660126.jpg">
@@ -35,8 +44,8 @@
         <!-- Add a calendar input and priority selection dropdown -->
         <form id="task-form">
             <input type="text" id="task-input" placeholder="Enter a new task...">
-            <input type="text" id="task-date" placeholder="mm/dd/yyyy" required> <!-- Input for date -->
-            <input type="text" id="task-time"  placeholder="--:-- --" required> <!-- Input for time -->
+            <input type="text" id="task-date" placeholder="Date (mm/dd/yyyy)" required> <!-- Input for date -->
+            <input type="text" id="task-time" placeholder="Time (HH:MM AM/PM)" required> <!-- Input for time -->
             <select id="task-priority">
                 <option value="low" style="background-color: green;">Low-priority</option>
                 <option value="medium" style="background-color: yellow;">Medium-priority</option>
