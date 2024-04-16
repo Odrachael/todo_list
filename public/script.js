@@ -117,7 +117,6 @@ function removeTaskFromLocalStorage(index) {
   localStorage.setItem('tasks', JSON.stringify(tasks)); // Update tasks in local storage
 }
 
-
 // Function to render tasks from localStorage
 function renderTasks() {
   const taskList = document.getElementById('task-list');
